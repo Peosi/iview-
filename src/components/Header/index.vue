@@ -5,78 +5,117 @@
   position: relative;
   border-radius: 4px;
   overflow: hidden;
+  height: 100%;
 }
-.layout-logo {
-  width: 100px;
-  height: 30px;
-  background: #5b6270;
-  border-radius: 3px;
+Hrader {
+  height: 80px;
+  padding: 0 0;
+  background-color: #f5f7f9;
+}
+.left {
+  height: 500px;
+}
+
+.ivu-layout {
+  height: 100%;
+}
+.left ivu-layout {
+  height: 70px;
+  width: 70px;
+}
+.header-left {
   float: left;
-  position: relative;
-  top: 15px;
-  left: 20px;
+  height: 64px;
+  width: 400px;
+  text-align: center;
+  margin-top: 14px;
 }
-.layout-nav {
-  width: 420px;
-  margin: 0 auto;
-  margin-right: 20px;
+.logo {
+  width: 64px;
+  height: 64px;
+  vertical-align: middle;
+}
+.school-name {
+  float: right;
+  width: 200px;
+  font-size: 25px;
+}
+.ivu-layout-header {
+  height: 89px;
+  background-color: white;
+  border-bottom: solid 1px rgb(204, 204, 204);
+  width: 100%;
+  padding: 0;
+}
+.header-right {
+  float: right;
+  height: 64px;
+  width: 400px;
+  text-align: center;
+  margin-top: 14px;
+}
+.username {
+  white-space: nowrap;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  font-family: 微软雅黑;
+  color: rgb(67, 67, 67);
+  float: left;
+}
+.ivu-menu ivu-menu-light ivu-menu-vertical {
+  font-size: 24px;
+  height: 100%;
 }
 </style>
+
 <template>
   <div class="layout">
     <Layout>
       <Header>
-        <Menu mode="horizontal" theme="dark" active-name="1">
-          <div class="layout-logo"></div>
-          <div class="layout-nav">
-            <MenuItem name="1">
-              <Icon type="ios-navigate"></Icon>Item 1
-            </MenuItem>
-            <MenuItem name="2">
-              <Icon type="ios-keypad"></Icon>Item 2
-            </MenuItem>
-            <MenuItem name="3">
-              <Icon type="ios-analytics"></Icon>Item 3
-            </MenuItem>
-            <MenuItem name="4">
-              <Icon type="ios-paper"></Icon>Item 4
-            </MenuItem>
-          </div>
-        </Menu>
+        <div class="header-left">
+          <img src="@/assets/logo.png" class="logo" />
+          <span class="school-name">****学校名称</span>
+        </div>
+        <div class="header-right">
+          <span class="username">欢迎XXX登陆</span>
+          <Icon type="md-home" style="font-size:30px;" />
+          <Icon type="md-close-circle" style="font-size:30px;float:right;margin-top:18px" />
+        </div>
       </Header>
-      <Layout>
+      <Layout class="conten-mau">
         <Sider hide-trigger :style="{background: '#fff'}">
-          <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
-            <Submenu name="1">
+          <Menu active-name="1-2" :open-names="['1']" style="font-size:24px;height:100%">
+            <Submenu name="1" style="border-bottom: solid 1px rgb(204, 204, 204)">
               <template slot="title">
-                <Icon type="ios-navigate"></Icon>Item 1
+                <Icon type="md-home"></Icon>首页
               </template>
-              <MenuItem name="1-1">Option 1</MenuItem>
-              <MenuItem name="1-2">Option 2</MenuItem>
-              <MenuItem name="1-3">Option 3</MenuItem>
             </Submenu>
-            <Submenu name="2">
+            <Submenu name="2" style="border-bottom: solid 1px rgb(204, 204, 204)">
               <template slot="title">
-                <Icon type="ios-keypad"></Icon>Item 2
+                <Icon type="ios-people"></Icon>综合管理
               </template>
-              <MenuItem name="2-1">Option 1</MenuItem>
-              <MenuItem name="2-2">Option 2</MenuItem>
             </Submenu>
-            <Submenu name="3">
+            <Submenu name="3" style="border-bottom: solid 1px rgb(204, 204, 204)">
               <template slot="title">
-                <Icon type="ios-analytics"></Icon>Item 3
+                <Icon type="ios-paper"></Icon>动态管理
               </template>
-              <MenuItem name="3-1">Option 1</MenuItem>
-              <MenuItem name="3-2">Option 2</MenuItem>
+            </Submenu>
+            <Submenu name="4" style="border-bottom: solid 1px rgb(204, 204, 204)">
+              <template slot="title">
+                <Icon type="md-calendar"></Icon>值周管理
+              </template>
+            </Submenu>
+            <Submenu name="5" style="border-bottom: solid 1px rgb(204, 204, 204)">
+              <template slot="title">
+                <Icon type="ios-cog"></Icon>系统设置
+              </template>
             </Submenu>
           </Menu>
         </Sider>
-        <Layout :style="{padding: '0 24px 24px'}">
-          <Breadcrumb :style="{margin: '24px 0'}">
-            <BreadcrumbItem>Home</BreadcrumbItem>
-            <BreadcrumbItem>Components</BreadcrumbItem>
-            <BreadcrumbItem>Layout</BreadcrumbItem>
-          </Breadcrumb>
+        <Layout :style="{padding: '0 24px 24px'}" class="content">
           <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">Content</Content>
         </Layout>
       </Layout>
@@ -84,7 +123,5 @@
   </div>
 </template>
 <script>
-export default {
-  name: "header"
-};
+export default {};
 </script>

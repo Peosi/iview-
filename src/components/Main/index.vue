@@ -116,7 +116,11 @@ Hrader {
           </Menu>
         </Sider>
         <Layout :style="{padding: '0 24px 24px'}" class="content">
-          <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">Content</Content>
+          <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+            <keep-alive>
+              <router-view/>
+            </keep-alive>
+          </Content>
         </Layout>
       </Layout>
     </Layout>

@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <div class="side-bar">side-bar side-bar side-bar side-bar side-bar side-bar</div>
+    <div class="side-bar">我是首页</div>
     <div class="content-wrapper">
-      <div class="header"></div>
-      <div class="content"></div>
+      <div class="header">李博宇</div>
+      <div class="content">dd</div>
     </div>
   </div>
 </template>

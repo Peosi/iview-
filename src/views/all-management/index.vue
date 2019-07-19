@@ -1,6 +1,6 @@
 <template>
   <section>
-     <ul class="list-warpper">
+    <ul class="list-warpper">
       <li class="list-item" v-for="(info, i) in listData" :key="`item-${i}`">
         <a class="link" :href="`${info.linkTo}`">{{info.name}}</a>
       </li>
@@ -15,35 +15,45 @@
 <script>
 export default {
   name: "all-management",
-  data(){
+  data() {
     return {
-      listData :[
+      listData: [
         {
-          name: '教师管理',
-          icon: '',
-          linkTo: '/allmanage/teacher', 
+          name: "教师管理",
+          icon: "",
+          linkTo: "/allmanage/teacher"
         },
-         {
-          name: '学生管理',
-          icon: '',
-          linkTo: '/allmanage/student', 
+        {
+          name: "学生管理",
+          icon: "",
+          linkTo: "/allmanage/student"
         },
-         {
-          name: '班级管理',
-          icon: '',
-          linkTo: '/allmanage/class', 
+        {
+          name: "班级管理",
+          icon: "",
+          linkTo: "/allmanage/class"
+        },
+        {
+          name: "一键导入",
+          icon: "",
+          linkTo: "/allmanage/class"
+        },
+        {
+          name: "下载模板",
+          icon: "",
+          linkTo: "/allmanage/class"
         }
       ]
-    }
+    };
   }
 };
 </script>
 
 <style>
-.list-warpper{
+.list-warpper {
   display: flex;
 }
-.list-item{
+.list-item {
   list-style: none;
   padding: 18px;
   font-size: 16px;
